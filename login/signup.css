@@ -1,0 +1,310 @@
+@font-face {
+    font-family: myFont;
+    src: url(../fonts/Computer-Condensed.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background: url(../imagini/banner.png);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000000;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .blended-image {
+    position: relative;
+    max-height: 170px;
+    max-width: 200px
+}
+
+header .navbar ul {
+    list-style: none;
+}
+
+header .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a {
+    font-size: 45px;
+    font-family: myFont;
+    padding: 20px;
+    color: #333;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header .navbar ul li a:hover {
+    color: red;
+}
+
+
+header .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+header .navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    padding: 10px;
+}
+
+header .navbar .dropdown-menu li {
+    margin-bottom: 10px;
+}
+
+header .navbar .dropdown-menu li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+header .navbar .dropdown .login-icon{
+    width: 50px;
+}
+#nav-toggle{
+    display: none;
+}
+header label{
+    font-size: 60px;
+    color :#333;
+    cursor: pointer;
+    display: none;
+    padding: 20px;
+    transition: color 0.3s;
+    font-family: myFont;
+}
+header label:hover{
+    color: red;
+}
+
+/* Add your existing CSS styles here */
+
+@media (max-width: 1200px) {
+    header {
+      padding: 20px;
+    }
+  
+    header label {
+      display: block;
+      cursor: pointer;
+    }
+    /* how can i make it to be vertical */
+    header .navbar ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background:white;
+      width: 100%;
+      transform: scale(0);
+      transform-origin: top;
+      transition: transform 0.3s;
+    }
+
+    header .navbar ul li {
+      width: 100%;
+      text-align: left;
+    }
+
+    header .navbar ul li a {
+      font-size: 40px;
+      padding: 10px;
+    }
+
+    header .navbar ul li a:hover {
+      color: red;
+    }
+
+    #nav-toggle:checked ~ .navbar ul {
+      transform: scale(1);
+    }
+    /* how can i make it so the logo is on the right side */
+    header .navbar .dropdown-menu {
+      position: static;
+      padding: 10px;
+      transform: scale(0);
+      transform-origin: top;
+      transition: transform 0.3s;
+    }
+    header .navbar .dropdown-menu li a {
+        font-size: 40px;
+        padding: 10px;
+        transition: color 0.3s;
+    }
+    header .navbar .dropdown-menu li a:hover {
+        color: blue;
+    }
+
+    header .blended-image {
+        position: absolute;
+        top: 50%;
+        right:0px;
+        transform: translate(-20%, -50%);
+        
+    }
+
+    header .navbar .dropdown:hover .dropdown-menu {
+      transform: scale(1);
+    }
+  }
+
+  /* login box */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+.box{
+    position: relative;
+    width: 500px;
+    height: 600px;
+    background: #000000;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.box form{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;  
+}
+.box form h2{
+    
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+.box form .inputBox{
+    position: relative;
+    margin-top: 35px;
+    width: 100%;
+}
+.box form .inputBox input{
+    position: relative;
+    width: 100%;
+    padding:  20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color :white;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+.box form .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    color: #333;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span
+{
+    color: #333;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+
+}
+.box form .inputBox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #333;
+    transition: 0.5s;
+    border-radius: 4px;
+    overflow: hidden;
+    pointer-events: none;
+}
+.box form .inputBox input:valid ~ i,
+.box form .inputBox input:focus ~ i
+{
+    height: 44px;
+}
+.box form .links
+{
+    display: flex;
+}
+.box form .butons{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+}
+.box form input{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background: #333;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: white;
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 49%;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+.error-message {
+
+    color: red;
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.60em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+
+  }
+
+.box form input[type="submit"]:hover
+{
+    background: rgb(201, 81, 1);
+    color: black;
+}
