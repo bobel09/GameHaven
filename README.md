@@ -1,6 +1,4 @@
 
-Absolutely, if you're using technologies like PHP and MySQL, XAMPP (or similar solutions like WampServer, MAMP, or LAMP) can be a convenient way to set up a local development environment. Below, I've modified the README file to include the XAMPP installation as part of the requirements.
-
 GameHaven - Online Game Store
 Table of Contents
 Introduction
