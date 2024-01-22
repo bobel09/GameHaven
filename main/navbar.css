@@ -1,0 +1,252 @@
+@font-face {
+    font-family: myFont;
+    src: url(../fonts/Computer-Condensed.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+
+    min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../imagini/banner.png);
+        background-position: center;
+        background-size: contain;
+        position: relative;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000000;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .blended-image {
+    position: relative;
+    max-height: 170px;
+    max-width: 200px
+}
+
+header .navbar ul {
+    list-style: none;
+}
+
+header .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a {
+    font-size: 45px;
+    font-family: myFont;
+    padding: 20px;
+    color: #333;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header .navbar ul li a:hover {
+    color: red;
+}
+
+
+header .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+header .navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    padding: 10px;
+}
+
+header .navbar .dropdown-menu li {
+    margin-bottom: 10px;
+}
+
+header .navbar .dropdown-menu li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+header .navbar .cart-icon{
+    width: 50px;
+}
+header .navbar .dropdown .login-icon{
+    width: 50px;
+}
+#nav-toggle{
+    display: none;
+}
+header label{
+    font-size: 60px;
+    color :#333;
+    cursor: pointer;
+    display: none;
+    padding: 20px;
+    transition: color 0.3s;
+    font-family: myFont;
+}
+header label:hover{
+    color: red;
+}
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1 {
+    font-size: 62px;
+
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.text-box a {
+    color: white;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 17px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+
+
+}
+
+.hero-btn:hover {
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+
+@media (max-width: 1200px) {
+    header {
+      padding: 20px;
+    }
+  
+    header label {
+      display: block;
+      cursor: pointer;
+    }
+    header .navbar ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background:white;
+      width: 100%;
+      transform: scale(0);
+      transform-origin: top;
+      transition: transform 0.3s;
+    }
+
+    header .navbar ul li {
+      width: 100%;
+      text-align: left;
+    }
+
+    header .navbar ul li a {
+      font-size: 40px;
+      padding: 10px;
+    }
+
+    header .navbar ul li a:hover {
+      color: red;
+    }
+
+    #nav-toggle:checked ~ .navbar ul {
+      transform: scale(1);
+    }
+    /* how can i make it so the logo is on the right side */
+    header .navbar .dropdown-menu {
+      position: static;
+      padding: 10px;
+      transform: scale(0);
+      transform-origin: top;
+      transition: transform 0.3s;
+    }
+    header .navbar .dropdown-menu li a {
+        font-size: 40px;
+        padding: 10px;
+        transition: color 0.3s;
+    }
+    header .navbar .dropdown-menu li a:hover {
+        color: blue;
+    }
+
+    header .blended-image {
+        position: absolute;
+        top: 50%;
+        right:0px;
+        transform: translate(-20%, -50%);
+        
+    }
+
+    header .navbar .dropdown:hover .dropdown-menu {
+      transform: scale(1);
+    }
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', cursive;
+
+
+}
+
+/*----------final-------*/
+.final { 
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #ffffff;
+    
+}
+.final h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 30px;
+}
+ 
+.final p{
+    font-size:20px;
+}
+.icons .fa{
+    color: red;
+    cursor: pointer;
+    margin:0 5px;
+    font-size:20px
+}

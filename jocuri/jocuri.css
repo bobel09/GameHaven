@@ -1,0 +1,311 @@
+@font-face {
+    font-family: myFont;
+    src: url(../fonts/Computer-Condensed.ttf);
+}
+* {
+    margin: 0   ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000000;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .blended-image {
+    position: relative;
+    max-height: 170px;
+    max-width: 200px
+}
+
+header .navbar ul {
+    list-style: none;
+}
+
+header .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a {
+    font-size: 45px;
+    font-family: myFont;
+    padding: 20px;
+    color: #333;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header .navbar ul li a:hover {
+    color: red;
+}
+
+
+header .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+header .navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    padding: 10px;
+}
+
+header .navbar .dropdown-menu li {
+    margin-bottom: 10px;
+}
+
+header .navbar .dropdown-menu li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+header .navbar .cart-icon{
+    width: 50px;
+}
+header .navbar .dropdown .login-icon{
+    width: 50px;
+}
+#nav-toggle{
+    display: none;
+}
+header label{
+    font-size: 60px;
+    color :#333;
+    cursor: pointer;
+    display: none;
+    padding: 20px;
+    transition: color 0.3s;
+    font-family: myFont;
+}
+header label:hover{
+    color: red;
+}
+
+@media (max-width: 1200px) {
+    header {
+      padding: 20px;
+    }
+  
+    header label {
+      display: block;
+      cursor: pointer;
+    }
+    header .navbar ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background:white;
+      width: 100%;
+      transform: scale(0);
+      transform-origin: top;
+      transition: transform 0.3s;
+    }
+
+    header .navbar ul li {
+      width: 100%;
+      text-align: left;
+    }
+
+    header .navbar ul li a {
+      font-size: 40px;
+      padding: 10px;
+    }
+
+    header .navbar ul li a:hover {
+      color: red;
+    }
+
+    #nav-toggle:checked ~ .navbar ul {
+      transform: scale(1);
+    }
+    /* how can i make it so the logo is on the right side */
+    header .navbar .dropdown-menu {
+      position: static;
+      padding: 10px;
+      transform: scale(0);
+      transform-origin: top;
+      transition: transform 0.3s;
+    }
+    header .navbar .dropdown-menu li a {
+        font-size: 40px;
+        padding: 10px;
+        transition: color 0.3s;
+    }
+    header .navbar .dropdown-menu li a:hover {
+        color: blue;
+    }
+
+    header .blended-image {
+        position: absolute;
+        top: 50%;
+        right:0px;
+        transform: translate(-20%, -50%);
+        
+    }
+
+    header .navbar .dropdown:hover .dropdown-menu {
+      transform: scale(1);
+    }
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', cursive;
+
+
+}
+.title{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 60px;
+}
+/*----------Products-------*/
+.produse {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+    gap: 70px;
+}
+
+.produse .box {
+    text-align: center;
+}
+
+.produse .box .box-content {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    background-color: var(--white);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    border: 1px solid #000000;
+}
+
+.name {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.produse .box .box-content:hover {
+    transform: scale(1.05);
+    background-color: #000000;
+}
+
+.img-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.img-container:hover .image-fit {
+    visibility: hidden;
+}
+
+.image-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.produse .box .box-content .pret {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    background-color: #000000;
+    color: #ffffff;
+    display: none;
+    transition: 0.3s ease;
+}
+
+.produse .box .box-content:hover .pret {
+    display: block;
+}
+
+.produse .box .box-content .hero-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.produse .box .box-content:hover .hero-btn {
+    display: block;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 17px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 0.3s;
+}
+
+
+
+/*----------final-------*/
+.final { 
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #ffffff;
+    
+}
+.final h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 30px;
+}
+ 
+.final p{
+    font-size:20px;
+}
+.icons .fa{
+    color: red;
+    cursor: pointer;
+    margin:0 5px;
+    font-size:20px
+}
